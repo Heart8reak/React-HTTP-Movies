@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import { Route } from 'react-router-dom'
+import AddMovie from './components/AddMovie'
 import Movie from './components/Movie'
 import MovieList from './components/MovieList';
 import SavedList from './components/SavedList';
@@ -19,6 +20,16 @@ function App() {
         path="/movies/:id"
         render={props => {
           return < Movie {...props} addToSavedList={addToSavedList} />
+        }}
+      />
+
+      <Route
+        path="/add-movie"
+        render={props => {
+          return <AddMovie
+            {...props}
+            items={savedList}
+          />
         }}
       />
     </div>
