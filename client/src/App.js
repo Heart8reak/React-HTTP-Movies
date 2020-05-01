@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
 import { Route } from 'react-router-dom'
-import MovieList from './componenets/MovieList';
-import SavedList from './componenets/SavedList';
+import Movie from './components/Movie'
+import MovieList from './components/MovieList';
+import SavedList from './components/SavedList';
 
 function App() {
   const [savedList, setSavedList] = useState([])
@@ -20,7 +21,6 @@ function App() {
           return < Movie {...props} addToSavedList={addToSavedList} />
         }}
       />
-      <MovieList />
     </div>
   );
 }
